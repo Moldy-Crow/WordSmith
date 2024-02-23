@@ -11,15 +11,15 @@ steps:
 - task: DockerCompose@0
   inputs:
     containerregistrytype: 'Azure Container Registry'
-    dockerComposeFile: '**/pilot-app-wordsmith/docker-compose.yml'
+    dockerComposeFile: '**/Moldy-Crow/WordSmith/docker-compose.yml'
     action: 'Run a Docker Compose command'
     dockerComposeCommand: 'build'
-    currentWorkingDirectory: '$(System.DefaultWorkingDirectory)/pilot-app-wordsmith'
+    currentWorkingDirectory: '$(System.DefaultWorkingDirectory)/Moldy-Crow/WordSmith/'
   
 
 - task: FortifyOnDemandStatic@8
   inputs:
-    FortifyProjects: '**/pilot-app-wordsmith'
+    FortifyProjects: '**/Moldy-Crow/WordSmith/'
     FodConnection: 'TestConnection'
     ReleaseOptions: '0'
     ReleaseId: 1121266
